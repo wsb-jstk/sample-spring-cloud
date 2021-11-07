@@ -12,10 +12,10 @@ public class CloudConfig {
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/bw-maker/**")
-                .uri("http://localhost:8763"))
+                .uri("lb://BW-MAKER"))
 
                 .route(r -> r.path("/adder/**")
-                .uri("http://localhost:8762"))
+                .uri("lb://ADDER"))
                 .build();
     }
 }
