@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/bw-maker")
 class ServiceAppNameRestController {
 
     @Value("${spring.application.name}")
@@ -17,7 +18,7 @@ class ServiceAppNameRestController {
     @Value("${server.port}")
     private String serverPort;
 
-    @RequestMapping("/name")
+    @GetMapping("/name")
     public String serviceApplicationName() {
         return "Hi, I'm " + appName + " on " + serverPort;
     }
